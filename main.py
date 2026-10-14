@@ -1,6 +1,11 @@
 '''
-A beginner-friendly Python expense tracker that calculates 
-remaining balances, validates user input, and helps track spending.
+    Personal Expense Tracker v1.0
+    1. Ask the user how much money they have.
+    2. Ask for the price of an item they purchased.
+    3. Calculate the remaining balance.
+    4. Display the result clearly.
+    5. Add checks for invalid input.
+    6. Expand it to handle multiple purchases.
 '''
 
 def bank_total():
@@ -18,7 +23,7 @@ def bank_total():
 
 def item_total():
     item_price = float(
-        input("What was the price of the item(s): $")
+        input("\nWhat was the price of the item(s): $")
     )
     price_tries = 0
     while item_price < 0:
@@ -35,10 +40,10 @@ item_price = item_total()
 remain_balance = total_amount - item_price
 
 if remain_balance < 0:
-    print("You have no more money to spend.")
-    print(f"You owe the bank ${remain_balance}.")
+    print("\nYou have no more money to spend.")
+    print(f"Your balance is ${remain_balance}.")
 elif remain_balance == 0:
-    print("Your remaining balance is $0.")
+    print("\nYour remaining balance is $0.")
     print("Let's keep that money out the red zone.")
 else:
-    print(f"Your remaining balance is ${remain_balance}.")
+    print(f"\nYour remaining balance is ${remain_balance}.")
